@@ -1,0 +1,47 @@
+# security:
+#   authorizationStrategy: "full-control"
+#   securityRealm: "local"
+
+# securtiyRealm:
+#   local:
+#     allowsSignup: false
+#     users:
+#       - id: Akshay1
+#       - password: Akshay@1
+
+# unclassified:
+#   location:
+#     url: "http://localhost:8080/"
+
+# jobs:
+#   - script: |
+#       pipeline {
+#         agent any
+#         stages {
+#           stage('Example') {
+#             steps {
+#               echo 'Hello, Jenkins Configuration as Code!'
+#             }
+#           }
+#         }
+#       }
+
+
+jenkins:
+  systemMessage: "Jenkins configured automatically by Jenkins Configuration as code \n\n"
+tool:
+  git:
+    installations:
+      - name: git
+        home: "C:\\Program Files\\Git\\bin\\git.exe"
+
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+        - usernamePassword:
+            description: mycred
+            id: mycrd
+            password: mycrd
+            scope: GLOBAL
+            username: admin

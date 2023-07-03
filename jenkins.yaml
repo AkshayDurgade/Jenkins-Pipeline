@@ -1,0 +1,32 @@
+unclassified:
+  jobs:
+    - script: >
+        pipelineJob('my-pipeline') {
+          displayName('My Pipeline')
+          definition {
+            cps {
+              script("""
+                pipeline {
+                  agent any
+                  stages {
+                    stage('Build') {
+                      steps {
+                        echo 'Building job'
+                      }
+                    }
+                    stage('Test') {
+                      steps {
+                        echo 'Running tests'
+                      }
+                    }
+                    stage('Deploy') {
+                      steps {
+                        echo 'Deploying job'
+                      }
+                    }
+                  }
+                }
+              """)
+            }
+          }
+        }
